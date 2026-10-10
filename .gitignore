@@ -1,0 +1,23 @@
+# Build directories
+build/
+bin/
+out/
+.vs/
+*.sln
+*.vcxproj*
+
+# Compiled artifacts
+*.obj
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.vst3/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.vscode/
