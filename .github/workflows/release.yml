@@ -1,0 +1,45 @@
+name: Release AudioBridge v2
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: AudioBridge v2.0.0 - Versión Portable Lista para Usar
+          tag_name: ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          files: releases/AudioBridge_v2_ListoParaOtroPC.zip
+          body: |
+            # AudioBridge v2 - Versión Portable Lista para Usar 🎧🚀
+
+            AudioBridge v2 permite transmitir el audio de **FL Studio** directamente a tus auriculares (Bluetooth, USB o Realtek) mediante el driver nativo de Windows (WASAPI Shared Stereo A2DP HQ), resolviendo de forma definitiva los problemas de drivers ASIO, distorsión, latencia o modo telefónico mono.
+
+            Esta versión ha sido compilada con **Runtime Estático (/MT)**: es 100% portable y **no** necesita librerías externas de Visual C++ ni instalación de software adicional en el otro equipo.
+
+            ---
+
+            ### 📦 Descarga
+            Descarga el archivo **`AudioBridge_v2_ListoParaOtroPC.zip`** en la sección **Assets** inferior.
+
+            ---
+
+            ### ⚡ Instrucciones de Uso (1 Clic)
+            1. Descomprime el archivo `.zip`.
+            2. Haz doble clic en **`INSTALAR_VST3.bat`** (copiará automáticamente el plugin a `C:\Program Files\Common Files\VST3\` y colocará el reproductor en tu Escritorio).
+            3. En **FL Studio**:
+               - Ve a **Options > Manage plugins** y pulsa **Find installed plugins**.
+               - Añade **AudioBridge v2** en la pista **Master** del Mixer.
+            4. Abre **`AudioBridge_v2_Receiver.exe`** en tu Escritorio, selecciona tus cascos y pulsa **Aplicar Salida**.
